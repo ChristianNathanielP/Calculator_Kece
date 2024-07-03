@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/output.css" />
+    <title>Kalkulator</title>
+</head>
+<body class="bg-[url('/img/bgnya.jpg')]">
+
+    <header class="w-full h-8 pl-10 pt-6 flex items-center">
+        <h1 class="font-bold text-ijo uppercase">
+            Kalkulator Kece</h1>
+        <img src="img/star@1x-1.0s-200px-200px.svg" alt="" class="w-14 block">
+    </header>
+    
+    <div class="container flex h-screen w-full items-center justify-center">
+        <div class="h-[600px] w-[400px] rounded-3xl border-solid border-primary bg-primary p-4 text-white shadow-md shadow-ijo">
+            <input
+            type="text"
+            id="display"
+            class="mb-5 mt-3 py-2 w-full rounded-lg bg-dark pr-2 text-right text-5xl font-semibold text-white focus:outline-none"
+            placeholder="0" readonly
+            />
+            <div class="mb-1 flex w-full justify-center gap-2 p-2 font-bold">
+                <button onclick="clearDisplay()" class="button w-32 rounded-2xl bg-dark p-5 text-ijo transition ease-in-out hover:shadow-sm hover:shadow-ijo active:-translate-x-1 active:translate-y-1 active:shadow-inner active:shadow-ijo">
+                    AC
+                </button>
+                <button onclick="delDisplay()" class="button w-32 rounded-2xl bg-dark p-5 transition ease-in-out hover:shadow-sm hover:shadow-ijo active:-translate-x-1 active:translate-y-1 active:shadow-inner active:shadow-ijo">
+                    DEL
+                </button>
+                <button onclick="appendToDisplay('%')" class="button w-32 rounded-2xl bg-dark p-5 text-ijo transition ease-in-out hover:shadow-sm hover:shadow-ijo active:-translate-x-1 active:translate-y-1 active:shadow-inner active:shadow-ijo">
+                    %
+                </button>
+                <button onclick="appendToDisplay('/')" class="button w-32 rounded-2xl bg-dark p-5 text-ijo transition ease-in-out hover:shadow-sm hover:shadow-ijo active:-translate-x-1 active:translate-y-1 active:shadow-inner active:shadow-ijo">
+                    &div;
+                </button>
+            </div>
+            <div class="mb-1 flex w-full justify-center gap-2 p-2 font-bold">
+                <button onclick="appendToDisplay('7')" class="button w-32 rounded-2xl bg-dark p-5 transition ease-in-out hover:shadow-sm hover:shadow-ijo active:-translate-x-1 active:translate-y-1 active:shadow-inner active:shadow-ijo">
+                    7
+                </button>
+                <button onclick="appendToDisplay('8')" class="button w-32 rounded-2xl bg-dark p-5 transition ease-in-out hover:shadow-sm hover:shadow-ijo active:-translate-x-1 active:translate-y-1 active:shadow-inner active:shadow-ijo">
+                    8
+                </button>
+                <button onclick="appendToDisplay('9')" class="button w-32 rounded-2xl bg-dark p-5 transition ease-in-out hover:shadow-sm hover:shadow-ijo active:-translate-x-1 active:translate-y-1 active:shadow-inner active:shadow-ijo">
+                    9
+                </button>
+                <button onclick="appendToDisplay('*')" class="button w-32 rounded-2xl bg-dark p-5 text-ijo transition ease-in-out hover:shadow-sm hover:shadow-ijo active:-translate-x-1 active:translate-y-1 active:shadow-inner active:shadow-ijo">
+                    x
+                </button>
+            </div>
+            <div class="mb-1 flex w-full justify-center gap-2 p-2 font-bold">
+                <button onclick="appendToDisplay('4')" class="button w-32 rounded-2xl bg-dark p-5 transition ease-in-out hover:shadow-sm hover:shadow-ijo active:-translate-x-1 active:translate-y-1 active:shadow-inner active:shadow-ijo">
+                    4
+                </button>
+                <button onclick="appendToDisplay('5')" class="button w-32 rounded-2xl bg-dark p-5 transition ease-in-out hover:shadow-sm hover:shadow-ijo active:-translate-x-1 active:translate-y-1 active:shadow-inner active:shadow-ijo">
+                    5
+                </button>
+                <button onclick="appendToDisplay('6')" class="button w-32 rounded-2xl bg-dark p-5 transition ease-in-out hover:shadow-sm hover:shadow-ijo active:-translate-x-1 active:translate-y-1 active:shadow-inner active:shadow-ijo">
+                    6
+                </button>
+                <button onclick="appendToDisplay('-')" class="button w-32 rounded-2xl bg-dark p-5 text-ijo transition ease-in-out hover:shadow-sm hover:shadow-ijo active:-translate-x-1 active:translate-y-1 active:shadow-inner active:shadow-ijo">
+                    -
+                </button>
+            </div>
+            <div class="mb-1 flex w-full justify-center gap-2 p-2 font-bold">
+                <button onclick="appendToDisplay('1')" class="button w-32 rounded-2xl bg-dark p-5 transition ease-in-out hover:shadow-sm hover:shadow-ijo active:-translate-x-1 active:translate-y-1 active:shadow-inner active:shadow-ijo">
+                    1
+                </button>
+                <button onclick="appendToDisplay('2')" class="button w-32 rounded-2xl bg-dark p-5 transition ease-in-out hover:shadow-sm hover:shadow-ijo active:-translate-x-1 active:translate-y-1 active:shadow-inner active:shadow-ijo">
+                    2
+                </button>
+                <button onclick="appendToDisplay('3')" class="button w-32 rounded-2xl bg-dark p-5 transition ease-in-out hover:shadow-sm hover:shadow-ijo active:-translate-x-1 active:translate-y-1 active:shadow-inner active:shadow-ijo">
+                    3
+                </button>
+                <button onclick="appendToDisplay('+')" class="button w-32 rounded-2xl bg-dark p-5 text-ijo transition ease-in-out hover:shadow-sm hover:shadow-ijo active:-translate-x-1 active:translate-y-1 active:shadow-inner active:shadow-ijo">
+                    +
+                </button>
+            </div>
+            <div class="mb-1 flex w-full justify-center gap-2 p-2 font-bold">
+                <button onclick="toogleSign()" class="button w-32 rounded-2xl bg-dark p-5 transition ease-in-out hover:shadow-sm hover:shadow-ijo active:-translate-x-1 active:translate-y-1 active:shadow-inner active:shadow-ijo">
+                    -/+
+                </button>
+                <button onclick="appendToDisplay('0')" class="button w-32 rounded-2xl bg-dark p-5 transition ease-in-out hover:shadow-sm hover:shadow-ijo active:-translate-x-1 active:translate-y-1 active:shadow-inner active:shadow-ijo">
+                    0
+                </button>
+                <button onclick="appendToDisplay('.')" class="button w-32 rounded-2xl bg-dark p-5 transition ease-in-out hover:shadow-sm hover:shadow-ijo active:-translate-x-1 active:translate-y-1 active:shadow-inner active:shadow-ijo">
+                    .
+                </button>
+                <button onclick="calculate()" class="button w-32 rounded-2xl bg-emerald-500 p-4 text-2xl text-white transition ease-in-out hover:shadow-sm hover:shadow-dark active:-translate-x-1 active:translate-y-1 active:shadow-inner active:shadow-dark">
+                    =
+                </button>
+            </div>
+            <!-- <div class="mt-12 flex justify-center">
+            <p class="text-xs font-medium text-ijo">
+                Created by Christian Nathaniel
+            </p>
+            </div> -->
+        </div>
+    </div>
+
+    <footer class="w-full p-4 bg-dark">
+        <div class="flex justify-center items-center text-ijo">
+            <h1 class="font-semibold text-xs">Dibuat oleh <span>
+                <a href="https://www.instagram.com/cnpngin._/" target="_blank" class="font-bold">Christian Nathaniel</a>
+            </span></h1>
+        </div>
+    </footer>
+
+    <script src="/src/script.js"></script>
+    <script src="https://kit.fontawesome.com/8b0b03f283.js" crossorigin="anonymous"></script>
+</body>
+</html>
