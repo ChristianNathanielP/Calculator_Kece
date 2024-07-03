@@ -708,6 +708,10 @@ video {
   background-image: url('/img/bgnya.jpg');
 }
 
+.bg-\[url\(\'img\/bgnya\.jpg\'\)\] {
+  background-image: url('img/bgnya.jpg');
+}
+
 .p-2 {
   padding: 0.5rem;
 }
