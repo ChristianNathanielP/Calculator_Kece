@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    background-position: center; 
-    background-repeat: no-repeat; 
-    background-size: cover; 
+.custom{
+    background: rgb(52,211,153);
+    background: radial-gradient(circle, rgba(52,211,153,1) 0%, rgba(23,23,23,1) 27%, rgba(23,23,23,1) 52%, rgba(52,211,153,1) 61%, rgba(23,23,23,1) 85%, rgba(52,211,153,1) 100%);
 }
